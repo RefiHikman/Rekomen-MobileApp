@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1061460941330",
+    "project_id": "rekomen-926c7",
+    "storage_bucket": "rekomen-926c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061460941330:android:f42f8fc98f466db4ad56cb",
+        "android_client_info": {
+          "package_name": "com.example.rekomenapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061460941330-qusc8pepnumv6ofhb040sb66rmtgh3u9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIcBjqHffhlbJkIkJqsCtaugGI3QciMfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061460941330-qusc8pepnumv6ofhb040sb66rmtgh3u9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

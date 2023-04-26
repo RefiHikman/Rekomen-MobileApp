@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/icon1"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/commentImg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/divider"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:background="@color/icon1"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/commentImg"
+        android:layout_marginHorizontal="20dp"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_comment"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:id="@+id/commentNama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="---"
+                android:textSize="10dp"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/commentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/commentNama"
+                android:fontFamily="@font/poppins"
+                android:text="Lorem ipsum dolor sit amet"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/commentDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/commentText"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/poppins_light"
+                android:text="__-__-____"
+                android:textSize="10dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/icon1"
+        android:layout_below="@id/cardView"/>
+
+</RelativeLayout>

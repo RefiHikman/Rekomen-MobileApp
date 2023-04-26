@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.categorymenu.CategoryNongkrongFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/popularCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/ripple_card"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_card">
+
+                    <ImageView
+                        android:id="@+id/cardImg1"
+                        android:layout_width="150dp"
+                        android:layout_height="170dp"
+                        android:layout_marginRight="15dp"
+                        android:scaleType="centerCrop"
+                        android:background="@color/icon1" />
+
+                    <TextView
+                        android:id="@+id/cardTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_toRightOf="@id/cardImg1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Tempat Nongkrong Populer Hari Ini"
+                        android:textColor="@color/mainOrange"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/cardSubtitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cardTitle1"
+                        android:layout_marginRight="15dp"
+                        android:layout_toRightOf="@id/cardImg1"
+                        android:fontFamily="@font/poppins"
+                        android:text="---"
+                        android:textColor="#8d8d8d"
+                        android:textSize="9dp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <GridLayout
+                android:id="@+id/itemGrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/popularCard"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                android:columnCount="2">
+
+                <TextView
+                    android:id="@+id/seeAll4"
+                    android:layout_columnWeight="1"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/poppins_extrabold"
+                    android:text="See All"
+                    android:textColor="@color/mainOrange"
+                    android:textSize="16dp" />
+
+                <RelativeLayout
+                    android:id="@+id/gridItem1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ripple_card"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/itemImage1"
+                        android:layout_width="160dp"
+                        android:layout_height="90dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nongkrong2"
+                        app:shapeAppearanceOverlay="@style/gridItemImage" />
+
+                    <TextView
+                        android:id="@+id/itemText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/itemImage1"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Indoor"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gridItem2"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="right"
+                    android:background="@drawable/ripple_card"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/itemImage2"
+                        android:layout_width="160dp"
+                        android:layout_height="90dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nongkrong1"
+                        app:shapeAppearanceOverlay="@style/gridItemImage" />
+
+                    <TextView
+                        android:id="@+id/itemText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/itemImage2"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Outdoor"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gridItem3"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/ripple_card"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/itemImage3"
+                        android:layout_width="160dp"
+                        android:layout_height="90dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nongkrong3"
+                        app:shapeAppearanceOverlay="@style/gridItemImage" />
+
+                    <TextView
+                        android:id="@+id/itemText3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/itemImage3"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Classic"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gridItem4"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="right"
+                    android:background="@drawable/ripple_card"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/itemImage4"
+                        android:layout_width="160dp"
+                        android:layout_height="90dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nongkrong10"
+                        app:shapeAppearanceOverlay="@style/gridItemImage" />
+
+                    <TextView
+                        android:id="@+id/itemText4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/itemImage4"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Modern"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gridItem5"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/ripple_card"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/itemImage5"
+                        android:layout_width="160dp"
+                        android:layout_height="90dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nongkrong8"
+                        app:shapeAppearanceOverlay="@style/gridItemImage" />
+
+                    <TextView
+                        android:id="@+id/itemText5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/itemImage5"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Colorful"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/gridItem6"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="right"
+                    android:background="@drawable/ripple_card"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/itemImage6"
+                        android:layout_width="160dp"
+                        android:layout_height="90dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/nongkrong5"
+                        app:shapeAppearanceOverlay="@style/gridItemImage" />
+
+                    <TextView
+                        android:id="@+id/itemText6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/itemImage6"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Alam"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+            </GridLayout>
+
+            <RelativeLayout
+                android:id="@+id/dllCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemGrid"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ripple_card">
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/dllImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/ripple_card"
+                    android:src="@drawable/nongkrong7"
+                    app:brightness=".6" />
+
+                <TextView
+                    android:id="@+id/dllText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/itemImage1"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Lainnya"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

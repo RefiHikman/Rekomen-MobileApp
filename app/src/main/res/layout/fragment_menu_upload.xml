@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.mainmenu.UploadMenuFragment">
+
+    <TextView
+        android:id="@+id/topTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Upload"
+        android:textColor="@color/mainOrange"
+        android:textSize="38sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/reviewSubmit"
+        android:layout_below="@id/topTitle"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp">
+
+            <LinearLayout
+                android:id="@+id/judulLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Judul"
+                    android:textColor="#4F4F4F"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/reviewJudul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edit"
+                    android:backgroundTint="#f5f5f5"
+                    android:fontFamily="@font/poppins"
+                    android:hint="Ketik disini. . ."
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="15dp"
+                    android:textColorHint="#c2c2c2"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Kategori"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:textColor="#4F4F4F"
+                android:textSize="22dp" />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <RadioGroup
+                    android:id="@+id/reviewRadios"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/categoryUpload_1"
+                        android:layout_width="85dp"
+                        android:layout_height="28dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/category_upload_btn"
+                        android:button="@color/transparent"
+                        android:checked="true"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center"
+                        android:text="Makanan"
+                        android:textColor="@drawable/category_menu_text"
+                        android:textSize="11dp" />
+
+                    <RadioButton
+                        android:id="@+id/categoryUpload_2"
+                        android:layout_width="85dp"
+                        android:layout_height="28dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/category_upload_btn"
+                        android:button="@color/transparent"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center"
+                        android:text="Minuman"
+                        android:textColor="@drawable/category_menu_text"
+                        android:textSize="11dp" />
+
+                    <RadioButton
+                        android:id="@+id/categoryUpload_3"
+                        android:layout_width="85dp"
+                        android:layout_height="28dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/category_upload_btn"
+                        android:button="@color/transparent"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center"
+                        android:text="Refreshing"
+                        android:textColor="@drawable/category_menu_text"
+                        android:textSize="11dp" />
+
+                    <RadioButton
+                        android:id="@+id/categoryUpload_4"
+                        android:layout_width="85dp"
+                        android:layout_height="28dp"
+                        android:layout_marginRight="35dp"
+                        android:background="@drawable/category_upload_btn"
+                        android:button="@color/transparent"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center"
+                        android:text="Nongkrong"
+                        android:textColor="@drawable/category_menu_text"
+                        android:textSize="11dp" />
+                </RadioGroup>
+            </HorizontalScrollView>
+
+            <Spinner
+                android:id="@+id/reviewSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_spinner"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:theme="@style/spinnerTheme"
+                style="@style/spinnerTheme"
+                android:fontFamily="@font/poppins" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Foto"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:textColor="#4F4F4F"
+                android:textSize="22dp" />
+
+            <ImageView
+                android:id="@+id/imageUpload1"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/ripple_card"
+                android:backgroundTint="#f5f5f5"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_upload" />
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="horizontal"
+                    android:paddingRight="40dp">
+
+                    <ImageView
+                        android:id="@+id/imageUpload2"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/ripple_card"
+                        android:backgroundTint="#f5f5f5"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/ic_upload" />
+
+                    <ImageView
+                        android:id="@+id/imageUpload3"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/ripple_card"
+                        android:backgroundTint="#f5f5f5"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/ic_upload" />
+
+                    <ImageView
+                        android:id="@+id/imageUpload4"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/ripple_card"
+                        android:backgroundTint="#f5f5f5"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:src="@drawable/ic_upload" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/deskripsiLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Deskripsi"
+                    android:textColor="#4F4F4F"
+                    android:textSize="22dp" />
+
+                <EditText
+                    android:id="@+id/reviewDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:background="@drawable/rounded_edit"
+                    android:backgroundTint="#f5f5f5"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="start"
+                    android:hint="Ketik disini. . ."
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="15dp"
+                    android:textColorHint="#c2c2c2"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hargaLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Rp. "
+                    android:textColor="#4F4F4F"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/reviewHarga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edit"
+                    android:backgroundTint="#f5f5f5"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="start"
+                    android:hint="10000 (Optional)"
+                    android:inputType="number"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="15dp"
+                    android:textColorHint="#c2c2c2"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/ratingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_edit"
+                android:backgroundTint="#f5f5f5"
+                android:paddingVertical="10dp">
+
+                <RatingBar
+                    android:id="@+id/reviewRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:numStars="5"
+                    android:stepSize="0.5" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/reviewSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rounded_upload_btn"
+        android:backgroundTint="@color/mainOrange"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingVertical="12dp"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+</RelativeLayout>

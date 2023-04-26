@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.mainmenu.HomeMenuFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/topTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Rekomen"
+                android:textColor="@color/mainOrange"
+                android:textSize="38sp" />
+
+            <TextView
+                android:id="@+id/topSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topTitle"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Mau cari apa hari ini?"
+                android:textColor="#4f4f4f"
+                android:textSize="22sp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/topProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:background="#dddddd"
+                android:scaleType="centerCrop"
+                android:translationZ="1dp"
+                app:shapeAppearanceOverlay="@style/profileImageView" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/topProfileBG"
+                android:layout_width="110dp"
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/mainOrange"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/profileImageView" />
+        </RelativeLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/categoryLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/topLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scrollbars="none">
+
+            <RadioGroup
+                android:id="@+id/categoryMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/categoryMenu_1"
+                    android:layout_width="85dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/category_menu_btn"
+                    android:button="@color/transparent"
+                    android:checked="true"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:text="Makanan"
+                    android:textColor="@drawable/category_menu_text"
+                    android:textSize="11dp" />
+
+                <RadioButton
+                    android:id="@+id/categoryMenu_2"
+                    android:layout_width="85dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/category_menu_btn"
+                    android:button="@color/transparent"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:text="Minuman"
+                    android:textColor="@drawable/category_menu_text"
+                    android:textSize="11dp" />
+
+                <RadioButton
+                    android:id="@+id/categoryMenu_3"
+                    android:layout_width="85dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/category_menu_btn"
+                    android:button="@color/transparent"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:text="Refreshing"
+                    android:textColor="@drawable/category_menu_text"
+                    android:textSize="11dp" />
+
+                <RadioButton
+                    android:id="@+id/categoryMenu_4"
+                    android:layout_width="85dp"
+                    android:layout_height="28dp"
+                    android:layout_marginRight="35dp"
+                    android:background="@drawable/category_menu_btn"
+                    android:button="@color/transparent"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:text="Nongkrong"
+                    android:textColor="@drawable/category_menu_text"
+                    android:textSize="11dp" />
+            </RadioGroup>
+        </HorizontalScrollView>
+
+        <FrameLayout
+            android:id="@+id/homeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/categoryLayout"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

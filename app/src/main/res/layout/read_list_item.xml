@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5sp"
+    android:layout_marginBottom="10sp"
+    android:background="@drawable/ripple_card"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="8sp"
+    app:cardElevation="3sp"
+    android:id="@+id/itemCard">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ripple_card"
+        android:backgroundTint="#fafafa">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150sp"
+            android:layout_height="200sp"
+            android:background="#dddddd"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/textJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15sp"
+            android:layout_marginTop="12sp"
+            android:layout_marginRight="10sp"
+            android:layout_toRightOf="@id/imageView"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_bold"
+            android:maxLines="3"
+            android:text="Mie Ayam Pak Emmet"
+            android:textColor="@color/mainOrange"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textJudul"
+            android:layout_marginLeft="15sp"
+            android:layout_marginRight="10sp"
+            android:layout_toRightOf="@id/imageView"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins"
+            android:maxLines="4"
+            android:text="Batagor pak haji ebet yang sangat populer dan memiliki rasa yang ikonik, bumbu yang enak"
+            android:textColor="#8D8D8D"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottomLayout"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_light"
+            android:maxLines="1"
+            android:text="30-12-2023"
+            android:textColor="#8D8D8D"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/textUser"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/bottomLayout"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/imageView"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_light"
+            android:maxLines="1"
+            android:text="John Doe"
+            android:textColor="#8D8D8D"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:id="@+id/bottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageView"
+            android:layout_toRightOf="@id/imageView"
+            android:background="@color/mainOrange">
+
+            <TextView
+                android:id="@+id/textHarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:paddingVertical="2sp"
+                android:paddingLeft="10sp"
+                android:text="Rp. 5000"
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/textRating"
+                android:src="@drawable/ic_star"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/textRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4.5dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="4.5"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

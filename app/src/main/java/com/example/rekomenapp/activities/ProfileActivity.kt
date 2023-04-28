@@ -22,6 +22,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.example.rekomenapp.R
 import com.example.rekomenapp.adapters.ProfileAdapter
+import com.example.rekomenapp.models.CommentModel
 import com.example.rekomenapp.models.ReviewModel
 import com.example.rekomenapp.models.UserModel
 import com.google.android.material.imageview.ShapeableImageView
@@ -40,6 +41,9 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var rV: RecyclerView
     private lateinit var currentUserId: String
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+
+    private lateinit var selectedReview: ReviewModel
+    private lateinit var selectedId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -107,6 +111,31 @@ class ProfileActivity : AppCompatActivity() {
             getUserData()
         }
 
+        // SERIALIZABLE
+        selectedReview = if (intent.hasExtra("selectedReview")) {
+            intent.getSerializableExtra("selectedReview") as ReviewModel
+        } else {
+            ReviewModel(null)
+        }
+
+        // USER ID SERIALIZABLE
+        selectedId = if (intent.hasExtra("selectedComment")) {
+            intent.getSerializableExtra("selectedComment") as String
+        } else if (selectedReview == ReviewModel(null)) {
+            currentUserId
+        } else {
+            selectedReview.userId!!
+        }
+
+        // USER CHECK
+        if (currentUserId != selectedId) {
+            editBtn.alpha = 0f
+            editBtn.isClickable = false
+
+            logoutBtn.alpha = 0f
+            logoutBtn.isClickable = false
+        }
+
         // SEE ALL BTN
         val seeAll = findViewById<TextView>(R.id.seeAll)
         seeAll.setOnClickListener {
@@ -114,9 +143,13 @@ class ProfileActivity : AppCompatActivity() {
 
             intent.putExtra("category", "Reviewku")
             intent.putExtra("subcategory", "Reviewku")
+            intent.putExtra("selectedProfile", selectedId)
 
             startActivity(intent)
         }
+
+        Log.i(ContentValues.TAG, "currentUserId: $currentUserId")
+        Log.i(ContentValues.TAG, "selectedId: $selectedId")
 
         getReviewData()
         getUserData()
@@ -124,7 +157,7 @@ class ProfileActivity : AppCompatActivity() {
 
     // CALCULATE AGE FROM DD MMM YYYY
     fun calculateAge(birthdateString: String): Int {
-        val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
         val birthdate = dateFormat.parse(birthdateString)
 
         val today = Calendar.getInstance().time
@@ -157,7 +190,13 @@ class ProfileActivity : AppCompatActivity() {
         val bio = findViewById<TextView>(R.id.b1)
         val image = findViewById<ShapeableImageView>(R.id.g1)
 
-        val query = dbRefUser.child(currentUserId)
+        val query = if (intent.hasExtra("selectedComment")) {
+            dbRefUser.child(selectedId)
+        } else if (selectedReview == ReviewModel(null)) {
+            dbRefUser.child(currentUserId)
+        } else {
+            dbRefUser.child(selectedId)
+        }
 
         val userListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -189,7 +228,13 @@ class ProfileActivity : AppCompatActivity() {
     private fun getReviewData() {
         swipeRefreshLayout.isRefreshing = true
 
-        val query = dbRef.orderByChild("userId").equalTo(currentUserId)
+        val query = if (intent.hasExtra("selectedComment")) {
+            dbRef.orderByChild("userId").equalTo(selectedId)
+        } else if (selectedReview == ReviewModel(null)) {
+            dbRef.orderByChild("userId").equalTo(currentUserId)
+        } else {
+            dbRef.orderByChild("userId").equalTo(selectedId)
+        }
 
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {

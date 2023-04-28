@@ -101,6 +101,14 @@ class DetailActivity : AppCompatActivity() {
             val dialog = BottomSheetDialog(this)
             val view = layoutInflater.inflate(R.layout.bottom_sheet_detail, null)
 
+            val userProfile = view.findViewById<LinearLayout>(R.id.userProfile)
+            userProfile.setOnClickListener {
+                val intent = Intent(this, ProfileActivity::class.java).apply {
+                    putExtra("selectedReview", selectedReview)
+                }
+                startActivity(intent)
+            }
+
             val deleteData = view.findViewById<LinearLayout>(R.id.deleteData)
             deleteData.setOnClickListener {
                 val builder = AlertDialog.Builder(this)
@@ -137,6 +145,12 @@ class DetailActivity : AppCompatActivity() {
 
                 val dialogAlert = builder.create()
                 dialogAlert.show()
+            }
+
+            if (firebaseAuth.currentUser?.uid != selectedReview.userId
+                && firebaseAuth.currentUser?.uid != "Mw0NG3TEtCfwmqScuE3N8GY6p1p2") {
+                deleteData.visibility = View.GONE
+                deleteData.isClickable = false
             }
 
             dialog.setCancelable(true)
@@ -176,13 +190,6 @@ class DetailActivity : AppCompatActivity() {
             gd3.setOnClickListener {
                 imageDialog(imgLink4)
             }
-        }
-
-        // MORE BTN USER
-        if (firebaseAuth.currentUser?.uid != selectedReview.userId
-            && firebaseAuth.currentUser?.uid != "Mw0NG3TEtCfwmqScuE3N8GY6p1p2") {
-            moreBtn.visibility = View.GONE
-            moreBtn.isClickable = false
         }
     }
 }

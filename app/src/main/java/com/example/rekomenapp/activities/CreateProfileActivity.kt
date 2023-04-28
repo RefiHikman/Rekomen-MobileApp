@@ -78,7 +78,7 @@ class CreateProfileActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
             set(Calendar.DAY_OF_MONTH, dayOfMonth)
         }
 
-        val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH)
         val formattedDate = dateFormat.format(calendar.time)
 
         binding.tanggalBtn.text = formattedDate

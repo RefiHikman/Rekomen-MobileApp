@@ -1,5 +1,7 @@
 package com.example.rekomenapp.adapters
 
+import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +10,14 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rekomenapp.R
+import com.example.rekomenapp.activities.ProfileActivity
 import com.example.rekomenapp.models.CommentModel
+import com.example.rekomenapp.models.ReviewModel
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 
-class CommentAdapter(private val onItemClickListener: (CommentModel) -> Unit) : RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
+class CommentAdapter(private val context: Context, private val onItemClickListener: (CommentModel) -> Unit) : RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
     private val comments = mutableListOf<CommentModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentViewHolder {
@@ -47,6 +51,14 @@ class CommentAdapter(private val onItemClickListener: (CommentModel) -> Unit) : 
             cardView.setOnClickListener {
                 val comment = comments[adapterPosition]
                 onItemClickListener(comment)
+            }
+
+            imageView.setOnClickListener {
+                val comment = comments[adapterPosition]
+                val intent = Intent(context, ProfileActivity::class.java).apply {
+                    putExtra("selectedComment", comment.userId.toString())
+                }
+                context.startActivity(intent)
             }
         }
 

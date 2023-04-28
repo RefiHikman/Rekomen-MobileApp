@@ -118,7 +118,7 @@ class CommentActivity : AppCompatActivity() {
                         val reviewData = reviewSnapshot.getValue(CommentModel::class.java)
                         reviewList.add(reviewData!!)
                     }
-                    val adapter = CommentAdapter { comment ->
+                    val adapter = CommentAdapter (this@CommentActivity) { comment ->
                         if (currentUserId == comment.userId || currentUserId == "Mw0NG3TEtCfwmqScuE3N8GY6p1p2") {
                             val builder = AlertDialog.Builder(this@CommentActivity)
                             builder.setMessage("Yakin ingin menghapus comment?")

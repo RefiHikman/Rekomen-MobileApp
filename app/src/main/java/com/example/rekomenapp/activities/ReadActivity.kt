@@ -25,6 +25,8 @@ class ReadActivity : AppCompatActivity() {
     private lateinit var readLoading: TextView
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
 
+    private lateinit var selectedId: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_read)
@@ -63,6 +65,13 @@ class ReadActivity : AppCompatActivity() {
             topTitle.text = category
         }
 
+        // SERIALIZABLE
+        selectedId = if (intent.hasExtra("selectedProfile")) {
+            intent.getSerializableExtra("selectedProfile") as String
+        } else {
+            ""
+        }
+
         getReviewData()
     }
 
@@ -77,8 +86,12 @@ class ReadActivity : AppCompatActivity() {
 
         val query = if (subcategory == "See All") {
             dbRef.orderByChild("reviewCategory").equalTo("$category")
-        } else if (subcategory == "Reviewku" && category == "Reviewku") {
-            dbRef.orderByChild("userId").equalTo(currentUserId)
+        } else if (category == "Reviewku") {
+            if (intent.hasExtra("selectedProfile")) {
+                dbRef.orderByChild("userId").equalTo(selectedId)
+            } else {
+                dbRef.orderByChild("userId").equalTo(currentUserId)
+            }
         } else {
             dbRef.orderByChild("reviewCategorySort").equalTo("$category-$subcategory")
         }

@@ -9,9 +9,6 @@ android {
     namespace 'com.example.rekomenapp'
     compileSdk 33
 
-    aaptOptions.cruncherEnabled = false
-    aaptOptions.useNewCruncher = false
-
     defaultConfig {
         applicationId "com.example.rekomenapp"
         minSdk 16

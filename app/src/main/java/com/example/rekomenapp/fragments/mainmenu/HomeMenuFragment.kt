@@ -100,7 +100,7 @@ class HomeMenuFragment : Fragment() {
         dbUserRef.child(currentUserId).child("userImage").get().addOnSuccessListener {
             val userImage = it.value as? String
             if (userImage != null) {
-                val imgLink = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Fprofile%2F$userImage?alt=media"
+                val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Fprofile%2F$userImage?alt=media"
                 Glide.with(this).load(imgLink).into(profileImage)
             }
 

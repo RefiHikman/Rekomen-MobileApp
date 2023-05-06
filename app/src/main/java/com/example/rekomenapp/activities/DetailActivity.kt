@@ -74,10 +74,10 @@ class DetailActivity : AppCompatActivity() {
         }
 
         // IMG LINK
-        val imgLink1 = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Freview%2F${selectedReview.reviewImg1}?alt=media"
-        val imgLink2 = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Freview%2F${selectedReview.reviewImg2}?alt=media"
-        val imgLink3 = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Freview%2F${selectedReview.reviewImg3}?alt=media"
-        val imgLink4 = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Freview%2F${selectedReview.reviewImg4}?alt=media"
+        val imgLink1 = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${selectedReview.reviewImg1}?alt=media"
+        val imgLink2 = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${selectedReview.reviewImg2}?alt=media"
+        val imgLink3 = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${selectedReview.reviewImg3}?alt=media"
+        val imgLink4 = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${selectedReview.reviewImg4}?alt=media"
 
         judul.text = selectedReview.reviewJudul
         detail.text = selectedReview.reviewDesc

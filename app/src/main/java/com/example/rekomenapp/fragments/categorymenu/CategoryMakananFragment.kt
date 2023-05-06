@@ -172,7 +172,7 @@ class CategoryMakananFragment : Fragment() {
                                 cardSubtitle1.text = review?.reviewDesc
 
                                 // IMAGE VIEW
-                                val imgLink = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Freview%2F${review?.reviewImg1}?alt=media"
+                                val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${review?.reviewImg1}?alt=media"
                                 Glide.with(activity as Context)
                                     .load(imgLink)
                                     .into(cardImg1)

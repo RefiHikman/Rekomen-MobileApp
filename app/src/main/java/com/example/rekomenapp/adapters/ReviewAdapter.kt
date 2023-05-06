@@ -79,7 +79,7 @@ class ReviewAdapter(private val listener: OnItemClickListener) : RecyclerView.Ad
             }
 
             // REVIEW IMAGE
-            val imgLink = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Freview%2F${review.reviewImg1}?alt=media"
+            val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${review.reviewImg1}?alt=media"
             Glide.with(itemView)
                 .load(imgLink)
                 .into(imageView)

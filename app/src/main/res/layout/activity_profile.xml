@@ -19,35 +19,35 @@
             <RelativeLayout
                 android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="180sp"
                 android:background="@color/mainOrange">
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/g1"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
                     android:layout_alignParentRight="true"
                     android:background="@color/icon1"
                     android:scaleType="centerCrop"
-                    android:translationZ="2dp"
+                    android:translationZ="2sp"
                     app:shapeAppearanceOverlay="@style/profileImageView" />
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="110dp"
-                    android:layout_height="100dp"
+                    android:layout_width="110sp"
+                    android:layout_height="100sp"
                     android:layout_alignParentRight="true"
                     android:background="@color/secondaryOrange"
                     app:shapeAppearanceOverlay="@style/profileImageView" />
 
                 <ImageView
                     android:id="@+id/backBtn"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="35sp"
+                    android:layout_height="35sp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="20sp"
                     android:background="@drawable/rounded_plus_btn_main"
-                    android:paddingVertical="5dp"
-                    android:paddingRight="4dp"
+                    android:paddingVertical="5sp"
+                    android:paddingRight="4sp"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/ic_back" />
 
@@ -56,26 +56,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_above="@id/t2"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30sp"
+                    android:layout_marginTop="10sp"
                     android:fontFamily="@font/poppins_medium"
                     android:text="---"
                     android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/t2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="30sp"
+                    android:layout_marginBottom="30sp"
                     android:ellipsize="end"
                     android:fontFamily="@font/poppins_bold"
                     android:maxLines="2"
                     android:text="---"
                     android:textColor="@color/white"
-                    android:textSize="22dp" />
+                    android:textSize="22sp" />
             </RelativeLayout>
 
             <ScrollView
@@ -89,14 +89,14 @@
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/logoutBtn"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="35sp"
+                        android:layout_height="35sp"
                         android:layout_alignParentRight="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="20sp"
+                        android:layout_marginRight="30sp"
                         android:background="@drawable/rounded_btn_main"
                         android:backgroundTint="@android:color/holo_red_light"
-                        android:padding="8dp"
+                        android:padding="8sp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_logout"
                         android:tint="@color/white" />
@@ -106,15 +106,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/logoutBtn"
-                        android:layout_marginHorizontal="30dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginHorizontal="30sp"
+                        android:layout_marginTop="5sp"
                         app:cardBackgroundColor="@color/white"
-                        app:cardCornerRadius="20dp">
+                        app:cardCornerRadius="20sp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:padding="20dp">
+                            android:padding="20sp">
 
                             <TextView
                                 android:id="@+id/jp"
@@ -123,7 +123,7 @@
                                 android:fontFamily="@font/poppins_medium"
                                 android:text="Profile"
                                 android:textColor="#000000"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/edit"
@@ -133,15 +133,15 @@
                                 android:fontFamily="@font/poppins_semibold"
                                 android:text="Edit"
                                 android:textColor="#FFA45B"
-                                android:textSize="14dp" />
+                                android:textSize="14sp" />
 
                             <ImageView
                                 android:id="@+id/g4"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="50sp"
+                                android:layout_height="50sp"
                                 android:layout_below="@id/jp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10sp"
+                                android:layout_marginRight="20sp"
                                 app:srcCompat="@drawable/img_5" />
 
                             <TextView
@@ -149,14 +149,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignTop="@id/g4"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="4sp"
                                 android:layout_toRightOf="@id/g4"
                                 android:ellipsize="end"
                                 android:fontFamily="@font/poppins_semibold"
                                 android:maxLines="1"
                                 android:text="---"
                                 android:textColor="#000000"
-                                android:textSize="13dp" />
+                                android:textSize="13sp" />
 
                             <TextView
                                 android:id="@+id/s2"
@@ -167,15 +167,15 @@
                                 android:fontFamily="@font/poppins_light"
                                 android:text="Umur"
                                 android:textColor="#BBBBBB"
-                                android:textSize="12dp" />
+                                android:textSize="12sp" />
 
                             <ImageView
                                 android:id="@+id/g5"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="50sp"
+                                android:layout_height="50sp"
                                 android:layout_below="@id/g4"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10sp"
+                                android:layout_marginRight="20sp"
                                 app:srcCompat="@drawable/img_7" />
 
                             <TextView
@@ -183,14 +183,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignTop="@id/g5"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="4sp"
                                 android:layout_toRightOf="@id/g5"
                                 android:ellipsize="end"
                                 android:fontFamily="@font/poppins_semibold"
                                 android:maxLines="1"
                                 android:text="---"
                                 android:textColor="#000000"
-                                android:textSize="13dp" />
+                                android:textSize="13sp" />
 
                             <TextView
                                 android:id="@+id/a2"
@@ -201,15 +201,15 @@
                                 android:fontFamily="@font/poppins_light"
                                 android:text="Lokasi"
                                 android:textColor="#BBBBBB"
-                                android:textSize="12dp" />
+                                android:textSize="12sp" />
 
                             <ImageView
                                 android:id="@+id/g6"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
+                                android:layout_width="50sp"
+                                android:layout_height="50sp"
                                 android:layout_below="@id/g5"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10sp"
+                                android:layout_marginRight="20sp"
                                 app:srcCompat="@drawable/img_8" />
 
                             <TextView
@@ -217,14 +217,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignTop="@id/g6"
-                                android:layout_marginTop="4dp"
+                                android:layout_marginTop="4sp"
                                 android:layout_toRightOf="@id/g6"
                                 android:ellipsize="end"
                                 android:fontFamily="@font/poppins_semibold"
                                 android:maxLines="1"
                                 android:text="---"
                                 android:textColor="#000000"
-                                android:textSize="13dp" />
+                                android:textSize="13sp" />
 
                             <TextView
                                 android:id="@+id/b2"
@@ -235,7 +235,7 @@
                                 android:fontFamily="@font/poppins_light"
                                 android:text="Bio"
                                 android:textColor="#BBBBBB"
-                                android:textSize="12dp" />
+                                android:textSize="12sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -245,12 +245,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/cardView1"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginLeft="30sp"
+                        android:layout_marginTop="30sp"
                         android:fontFamily="@font/poppins_medium"
                         android:text="Reviewku"
                         android:textColor="#000000"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
 
                     <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
                         android:id="@+id/dotsIndicator"
@@ -258,13 +258,13 @@
                         android:layout_height="wrap_content"
                         android:layout_above="@id/profileRv"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="8dp"
-                        android:translationZ="2dp"
+                        android:layout_marginBottom="8sp"
+                        android:translationZ="2sp"
                         app:spi_dotColor="@color/icon"
                         app:spi_dotSelectedColor="@color/mainOrange"
-                        app:spi_dotSelectedSize="7dp"
-                        app:spi_dotSize="5dp"
-                        app:spi_dotSpacing="7dp" />
+                        app:spi_dotSelectedSize="7sp"
+                        app:spi_dotSize="5sp"
+                        app:spi_dotSpacing="7sp" />
 
                     <TextView
                         android:id="@+id/seeAll"
@@ -272,11 +272,11 @@
                         android:layout_height="wrap_content"
                         android:layout_above="@id/profileRv"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="30dp"
+                        android:layout_marginRight="30sp"
                         android:fontFamily="@font/poppins_extrabold"
                         android:text="See All"
                         android:textColor="@color/mainOrange"
-                        android:textSize="16dp" />
+                        android:textSize="16sp" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/profileRv"

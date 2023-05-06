@@ -29,7 +29,7 @@ class SearchAdapter(private val context: Context, private var dataList: List<Rev
         val selectedReview = dataList[position]
 
         // IMAGE
-        val imgLink = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Freview%2F${dataList[position].reviewImg1}?alt=media"
+        val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${dataList[position].reviewImg1}?alt=media"
         Glide.with(context).load(imgLink)
             .into(holder.imageView)
 

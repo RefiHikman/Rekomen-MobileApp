@@ -209,7 +209,7 @@ class ProfileActivity : AppCompatActivity() {
                 profesi.text = if (user?.userProfesi != "") {user?.userProfesi} else {"---"}
                 bio.text = if (user?.userBio != "") {user?.userBio} else {"---"}
 
-                val imgLink = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Fprofile%2F${user?.userImage}?alt=media"
+                val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Fprofile%2F${user?.userImage}?alt=media"
                 Glide.with(this@ProfileActivity).load(imgLink).into(image)
 
                 image.setOnClickListener {

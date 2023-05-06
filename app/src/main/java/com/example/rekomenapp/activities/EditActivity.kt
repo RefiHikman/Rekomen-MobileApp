@@ -105,7 +105,7 @@ class EditActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
                 tanggalLahir.text = user?.userTgl
 
                 if (user?.userImage != "") {
-                    val imgLink = "https://firebasestorage.googleapis.com/v0/b/rekomen-926c7.appspot.com/o/images%2Fprofile%2F${user?.userImage}?alt=media"
+                    val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Fprofile%2F${user?.userImage}?alt=media"
                     Picasso.get().load(imgLink).into(image)
 
                     imageUri = Uri.parse("Assigned")

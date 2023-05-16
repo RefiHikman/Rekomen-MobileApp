@@ -1,5 +1,6 @@
 package com.example.rekomenapp.fragments.mainmenu
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -101,7 +102,11 @@ class HomeMenuFragment : Fragment() {
             val userImage = it.value as? String
             if (userImage != null) {
                 val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Fprofile%2F$userImage?alt=media"
-                Glide.with(this).load(imgLink).into(profileImage)
+
+                val context = activity as? Context
+                if (context != null) {
+                    Glide.with(this).load(imgLink).into(profileImage)
+                }
             }
 
         }.addOnFailureListener{

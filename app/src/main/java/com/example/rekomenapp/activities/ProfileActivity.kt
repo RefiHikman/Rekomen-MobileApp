@@ -22,7 +22,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.example.rekomenapp.R
 import com.example.rekomenapp.adapters.ProfileAdapter
-import com.example.rekomenapp.models.CommentModel
 import com.example.rekomenapp.models.ReviewModel
 import com.example.rekomenapp.models.UserModel
 import com.google.android.material.imageview.ShapeableImageView
@@ -44,6 +43,9 @@ class ProfileActivity : AppCompatActivity() {
 
     private lateinit var selectedReview: ReviewModel
     private lateinit var selectedId: String
+
+    private lateinit var reviewku: TextView
+    private lateinit var seeAll: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +75,7 @@ class ProfileActivity : AppCompatActivity() {
         // EDIT BTN
         val editBtn = findViewById<TextView>(R.id.edit)
         editBtn.setOnClickListener {
-            val intent = Intent(this, EditActivity::class.java)
+            val intent = Intent(this, EditProfileActivity::class.java)
             startActivity(intent)
         }
 
@@ -137,7 +139,8 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         // SEE ALL BTN
-        val seeAll = findViewById<TextView>(R.id.seeAll)
+        reviewku = findViewById(R.id.reviewku)
+        seeAll = findViewById(R.id.seeAll)
         seeAll.setOnClickListener {
             val intent = Intent(this, ReadActivity::class.java)
 
@@ -150,6 +153,10 @@ class ProfileActivity : AppCompatActivity() {
 
         Log.i(ContentValues.TAG, "currentUserId: $currentUserId")
         Log.i(ContentValues.TAG, "selectedId: $selectedId")
+
+        reviewku.visibility = View.GONE
+        seeAll.visibility = View.GONE
+        seeAll.isClickable = false
 
         getReviewData()
         getUserData()
@@ -258,6 +265,10 @@ class ProfileActivity : AppCompatActivity() {
 
                     val dotsIndicator = findViewById<ScrollingPagerIndicator>(R.id.dotsIndicator)
                     dotsIndicator.attachToRecyclerView(rV)
+
+                    reviewku.visibility = View.VISIBLE
+                    seeAll.visibility = View.VISIBLE
+                    seeAll.isClickable = true
                 }
                 swipeRefreshLayout.isRefreshing = false
             }

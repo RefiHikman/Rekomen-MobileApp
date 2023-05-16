@@ -64,7 +64,9 @@
                         android:fontFamily="@font/poppins"
                         android:text="---"
                         android:textColor="#8d8d8d"
-                        android:textSize="9dp" />
+                        android:textSize="9dp"
+                        android:ellipsize="end"
+                        android:maxLines="4"/>
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>

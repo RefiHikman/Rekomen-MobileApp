@@ -29,23 +29,23 @@ class SearchAdapter(private val context: Context, private var dataList: List<Rev
         val selectedReview = dataList[position]
 
         // IMAGE
-        val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${dataList[position].reviewImg1}?alt=media"
+        val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${selectedReview.reviewId}%2F${selectedReview.reviewImg1}?alt=media"
         Glide.with(context).load(imgLink)
             .into(holder.imageView)
 
         holder.judulView.text = dataList[position].reviewJudul
         holder.descView.text = dataList[position].reviewDesc
-        holder.hargaView.text = if (dataList[position].reviewHarga != "") {"Rp. ${dataList[position].reviewHarga}"} else {""}
+        holder.hargaView.text = if (dataList[position].reviewHarga != "") {"Rp. ${selectedReview.reviewHarga}"} else {""}
         holder.ratingView.text = dataList[position].reviewRating.toString()
 
         // DATE
         if (dataList[position].reviewDate != null) {
-            val rDate = dataList[position].reviewDate?.split("_")
+            val rDate = selectedReview.reviewDate?.split("_")
             holder.dateView.text = rDate!![0]
         }
 
         // USER NAME
-        dbUserRef.child(dataList[position].userId!!).child("userNama").get().addOnSuccessListener {
+        dbUserRef.child(selectedReview.userId!!).child("userNama").get().addOnSuccessListener {
             val userName = it.value as String
             holder.userView.text = userName
         }.addOnFailureListener {

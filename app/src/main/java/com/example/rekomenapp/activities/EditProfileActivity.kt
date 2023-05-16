@@ -9,14 +9,13 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.DatePicker
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import com.example.rekomenapp.R
-import com.example.rekomenapp.databinding.ActivityEditBinding
+import com.example.rekomenapp.databinding.ActivityEditProfileBinding
 import com.example.rekomenapp.models.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -27,8 +26,8 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-class EditActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
-    private lateinit var binding: ActivityEditBinding
+class EditProfileActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
+    private lateinit var binding: ActivityEditProfileBinding
     private lateinit var dbRef: DatabaseReference
 
     private val calendar = Calendar.getInstance()
@@ -44,7 +43,7 @@ class EditActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityEditBinding.inflate(layoutInflater)
+        binding = ActivityEditProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -149,7 +148,6 @@ class EditActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
             options.setToolbarColor(ContextCompat.getColor(this, R.color.mainOrange))
             options.setStatusBarColor(ContextCompat.getColor(this, R.color.mainOrange))
             options.setActiveControlsWidgetColor(ContextCompat.getColor(this, R.color.mainOrange))
-            options.setToolbarTitle("Crop Image")
             UCrop.of(sourceUri, destinationUri)
                 .withAspectRatio(1f, 1f)
                 .withOptions(options)
@@ -176,8 +174,6 @@ class EditActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
         if (imageUri == Uri.parse("Assigned")) {
             user = UserModel(uId, nama, tanggalLahir, kota, profesi, bio, currentImageId)
         }
-
-
 
         if (nama.isEmpty()) {
             binding.editNama.error = "Mohon masukkan nama mu"

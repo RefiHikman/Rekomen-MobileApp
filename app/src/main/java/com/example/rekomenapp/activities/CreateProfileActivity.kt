@@ -100,7 +100,6 @@ class CreateProfileActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
             options.setToolbarColor(ContextCompat.getColor(this, R.color.mainOrange))
             options.setStatusBarColor(ContextCompat.getColor(this, R.color.mainOrange))
             options.setActiveControlsWidgetColor(ContextCompat.getColor(this, R.color.mainOrange))
-            options.setToolbarTitle("Crop Image")
             UCrop.of(sourceUri, destinationUri)
                 .withAspectRatio(1f, 1f)
                 .withOptions(options)

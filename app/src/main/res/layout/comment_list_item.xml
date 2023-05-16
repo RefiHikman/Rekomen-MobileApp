@@ -54,7 +54,8 @@
                 android:layout_below="@id/commentNama"
                 android:fontFamily="@font/poppins"
                 android:text="Lorem ipsum dolor sit amet"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/commentDate"

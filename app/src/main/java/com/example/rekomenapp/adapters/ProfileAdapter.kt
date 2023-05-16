@@ -61,7 +61,7 @@ class ProfileAdapter(private val listener: OnItemClickListener) : RecyclerView.A
             }
 
             // REVIEW IMAGE
-            val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${review.reviewImg1}?alt=media"
+            val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${review.reviewId}%2F${review.reviewImg1}?alt=media"
             Glide.with(itemView)
                 .load(imgLink)
                 .into(imageView)

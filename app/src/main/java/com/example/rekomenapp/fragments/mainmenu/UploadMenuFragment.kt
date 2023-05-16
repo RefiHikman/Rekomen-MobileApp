@@ -6,13 +6,14 @@ import android.content.Intent
 import android.graphics.PorterDuff
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.example.rekomenapp.R
 import com.example.rekomenapp.models.ReviewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -21,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -146,6 +148,15 @@ class UploadMenuFragment : Fragment() {
         reviewRating = viewOfLayout.findViewById(R.id.reviewRating)
         reviewHarga = viewOfLayout.findViewById(R.id.reviewHarga)
 
+
+        // DESCRIPTION EDITTEXT SCROLL
+        val context = activity as? Context
+        if (context != null) {
+            reviewDesc.setScroller(Scroller(context))
+            reviewDesc.isVerticalScrollBarEnabled = true
+            reviewDesc.movementMethod = ScrollingMovementMethod()
+        }
+
         // UPlOAD BUTTON
         val reviewSubmit = viewOfLayout.findViewById<Button>(R.id.reviewSubmit)
         reviewSubmit.setOnClickListener{
@@ -266,10 +277,10 @@ class UploadMenuFragment : Fragment() {
         }
 
         val idReview = dbRef.push().key!!
-        val imageId1 = if (imageUri1 != null) {"$idReview-1"} else {""}
-        val imageId2 = if (imageUri2 != null) {"$idReview-2"} else {""}
-        val imageId3 = if (imageUri3 != null) {"$idReview-3"} else {""}
-        val imageId4 = if (imageUri4 != null) {"$idReview-4"} else {""}
+        val imageId1 = if (imageUri1 != null) {"$idReview-$date-1"} else {""}
+        val imageId2 = if (imageUri2 != null) {"$idReview-$date-2"} else {""}
+        val imageId3 = if (imageUri3 != null) {"$idReview-$date-3"} else {""}
+        val imageId4 = if (imageUri4 != null) {"$idReview-$date-4"} else {""}
 
         val uId = firebaseAuth.currentUser!!.uid
         val review = ReviewModel(idReview, category, subcategory, judul, deskripsi, rating, harga, imageId1, imageId2, imageId3, imageId4, date, uId)
@@ -281,10 +292,10 @@ class UploadMenuFragment : Fragment() {
             var imagesUploaded = 0
 
             // STORAGE REF
-            val storageReference1 = FirebaseStorage.getInstance().getReference("images/review/$imageId1")
-            val storageReference2 = FirebaseStorage.getInstance().getReference("images/review/$imageId2")
-            val storageReference3 = FirebaseStorage.getInstance().getReference("images/review/$imageId3")
-            val storageReference4 = FirebaseStorage.getInstance().getReference("images/review/$imageId4")
+            val storageReference1 = FirebaseStorage.getInstance().getReference("images/review/$idReview/$imageId1")
+            val storageReference2 = FirebaseStorage.getInstance().getReference("images/review/$idReview/$imageId2")
+            val storageReference3 = FirebaseStorage.getInstance().getReference("images/review/$idReview/$imageId3")
+            val storageReference4 = FirebaseStorage.getInstance().getReference("images/review/$idReview/$imageId4")
 
             // CALLBACK AFTER >= 1 IMAGES INPUTED
             val onCompleteUpload = {

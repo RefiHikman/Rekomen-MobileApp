@@ -1,5 +1,6 @@
 package com.example.rekomenapp.fragments.categorymenu
 
+import android.app.ProgressDialog
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
@@ -49,6 +50,7 @@ class CategoryMakananFragment : Fragment() {
     private lateinit var cardImg1: ImageView
     private lateinit var cardSubtitle1: TextView
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
+    private lateinit var progressDialog: ProgressDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -172,10 +174,13 @@ class CategoryMakananFragment : Fragment() {
                                 cardSubtitle1.text = review?.reviewDesc
 
                                 // IMAGE VIEW
-                                val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${review?.reviewImg1}?alt=media"
-                                Glide.with(activity as Context)
-                                    .load(imgLink)
-                                    .into(cardImg1)
+                                val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${review?.reviewId}%2F${review?.reviewImg1}?alt=media"
+                                val context = activity as? Context
+                                if (context != null) {
+                                    Glide.with(context)
+                                        .load(imgLink)
+                                        .into(cardImg1)
+                                }
 
                                 popularCard.setOnClickListener {
                                     val intent = Intent(activity as Context, DetailActivity::class.java).apply {

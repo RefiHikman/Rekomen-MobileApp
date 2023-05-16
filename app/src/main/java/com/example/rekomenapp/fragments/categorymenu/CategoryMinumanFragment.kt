@@ -170,10 +170,13 @@ class CategoryMinumanFragment : Fragment() {
                             cardSubtitle1.text = review?.reviewDesc
 
                             // IMAGE VIEW
-                            val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${review?.reviewImg1}?alt=media"
-                            Glide.with(activity as Context)
-                                .load(imgLink)
-                                .into(cardImg1)
+                            val imgLink = "https://ik.imagekit.io/owdo6w10o/o/images%2Freview%2F${review?.reviewId}%2F${review?.reviewImg1}?alt=media"
+                            val context = activity as? Context
+                            if (context != null) {
+                                Glide.with(context)
+                                    .load(imgLink)
+                                    .into(cardImg1)
+                            }
 
                             popularCard.setOnClickListener {
                                 val intent = Intent(activity as Context, DetailActivity::class.java).apply {
